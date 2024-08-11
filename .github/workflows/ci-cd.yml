@@ -10,12 +10,6 @@ on:
       - 'terraform/**'
       - 'README.md'
 
-env:
-  DOCKERHUB_REPOSITORY_VOTING: examplevotingapp_vote
-  DOCKERHUB_REPOSITORY_RESULT: examplevotingapp_result
-  DOCKERHUB_REPOSITORY_WORKER: examplevotingapp_worker
-  K8S_MANIFESTS_PATH: k8s-specifications
-
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -37,7 +31,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/$DOCKERHUB_REPOSITORY_VOTING:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/examplevotingapp_vote:${{github.run_id}}
         context: .
         file: ./vote/Dockerfile
 
@@ -45,7 +39,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/$DOCKERHUB_REPOSITORY_RESULT:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/examplevotingapp_result:${{github.run_id}}
         context: .
         file: ./result/Dockerfile
     
@@ -53,7 +47,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/$DOCKERHUB_REPOSITORY_WORKER:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/examplevotingapp_worker:${{github.run_id}}
         context: .
         file: ./worker/Dockerfile
 
