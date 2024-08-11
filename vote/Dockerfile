@@ -18,13 +18,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 FROM base AS dev
 RUN pip install watchdog
 ENV FLASK_ENV=development
-CMD ["python", "app.py"]
+CMD ["python", "./vote/app.py"]
 
 # Define the final stage that will bundle the application for production
 FROM base AS final
 
 # Copy our code from the current folder to the working directory inside the container
-COPY . .
+COPY ./vote/ .
 
 # Make port 80 available for links and/or publish
 EXPOSE 80
