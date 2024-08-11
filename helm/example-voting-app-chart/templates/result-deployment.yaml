@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: mandaliharish/examplevotingapp_result:{{ .Values.components.result-app.image.tag }}
+      - image: mandaliharish/examplevotingapp_result:{{ .Values.components.result_app.image.tag }}
         name: result
         ports:
         - containerPort: 80

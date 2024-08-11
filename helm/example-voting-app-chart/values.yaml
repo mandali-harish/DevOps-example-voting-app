@@ -5,12 +5,12 @@
 replicaCount: 1
 
 components:
-  voting-app:
+  voting_app:
     name: "voting-app"
     image:
       repository: mandaliharish/voting-app
       tag: "latest"
-  result-app:
+  result_app:
     name: "result-app"
     image:
       repository: mandaliharish/result-app
