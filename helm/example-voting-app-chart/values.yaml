@@ -9,7 +9,7 @@ components:
     name: "voting-app"
     image:
       repository: mandaliharish/voting-app
-      tag: "latest"
+      tag: "10335804939"
   result_app:
     name: "result-app"
     image:
