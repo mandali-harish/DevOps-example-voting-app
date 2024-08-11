@@ -9,14 +9,14 @@ components:
     name: "voting-app"
     image:
       repository: mandaliharish/voting-app
-      tag: "10335804939"
+      tag: "10335980820"
   result_app:
     name: "result-app"
     image:
       repository: mandaliharish/result-app
-      tag: "10335804939"
+      tag: "10335980820"
   worker:
     name: "worker"
     image:
       repository: mandaliharish/worker
-      tag: "10335804939"
+      tag: "10335980820"
