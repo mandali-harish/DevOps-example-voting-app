@@ -8,6 +8,6 @@ spec:
   type: LoadBalancer
   ports:
   - name: "result-service"
-    port: 80
+    port: 5001
   selector:
     app: result
