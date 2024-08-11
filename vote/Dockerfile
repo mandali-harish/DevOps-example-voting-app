@@ -7,7 +7,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the application directory
-WORKDIR /usr/local/app
+WORKDIR /app
 
 # Install our requirements.txt
 COPY requirements.txt ./requirements.txt
