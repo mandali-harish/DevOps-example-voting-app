@@ -1,0 +1,51 @@
+name: Build Infra and deploy
+
+on:
+    push:
+        branches:
+        - develop
+        paths:
+        - 'terraform/dev/**'
+
+
+jobs:
+    validateInfra:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v2
+
+        - name: "AWS CLI Login"
+
+        - name: Terraform init
+
+        - name: Terraform fmt
+
+        - name: Terraform validate
+
+        - name: Terraform plan
+
+        - name: Add Plan Comment
+
+    CreateInfra:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Setup Terraform
+
+        - name: "AWS CLI Login to Dev account"
+
+        - name: Terraform init for Dev branch
+
+        - name: Terraform plan for Dev
+
+        - name: Terraform apply for Dev
+
+
+    DestroyInfra:
+        runs-on: ubuntu-latest
+    
+
